@@ -2,7 +2,7 @@ with
 
 source as (
     select *
-    from read_csv('../data/raw/market_metadata.csv')
+    from raw_market_metadata
 
 )
 

@@ -1,0 +1,18 @@
+# Environment
+.env
+venv/
+__pycache__/
+
+# Data files (too large for git)
+data/raw/*.csv
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# OS
+.DS_Store
+*.duckdb
+*.duckdb
+*.duckdb
