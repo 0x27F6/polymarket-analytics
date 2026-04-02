@@ -1,4 +1,3 @@
--- models/marts/mart_top_markets.sql
 with categorized as (
     select
         unique_key,

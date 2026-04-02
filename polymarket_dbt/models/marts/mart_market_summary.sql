@@ -31,16 +31,20 @@ category_summary as (
 summary_rounded as (
     select 
         category,
+        -- market level 
         total_markets,
         round(total_volume) as total_volume,
         round(total_notional_volume) as total_notional_volume,
+        -- average by category 
         round(avg_market_length) as avg_market_length_hours,
         round(avg_volume) as avg_volume,
         round(avg_notional_vol) as avg_notional_vol,
         round(avg_trade_count) as avg_trade_count,
         round(avg_unique_traders) as avg_unique_traders,
-        round(median_market_length) as median_market_length, 
+        -- median by category 
+        round(median_volume) as median_volume,
         round(median_notional_volume) as median_notional_volume,
+        round(median_market_length) as median_market_length, 
         median_trade_count,
         median_unique_traders
     from category_summary 
