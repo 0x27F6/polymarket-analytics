@@ -3,7 +3,6 @@ with
 top_markets_by_volume as(
     select 
         unique_key,
-        condition_id,
         total_volume_usdc,
         row_number() over(order by total_volume_usdc desc) as volume_rank
     from {{ref('int_markets_categorized')}}

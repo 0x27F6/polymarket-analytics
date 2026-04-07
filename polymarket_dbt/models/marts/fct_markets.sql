@@ -27,7 +27,7 @@ joined as (
     join trades t
         on m.unique_key = t.unique_key
         and m.condition_id = t.condition_id 
-)
+),
 
 -- Collapse to market level
 -- for shared values across outcomes max is the chosen aggregate.

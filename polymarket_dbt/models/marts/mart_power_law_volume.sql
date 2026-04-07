@@ -3,7 +3,6 @@
 with ranked as (
     select
         unique_key,
-        condition_id,
         question,
         category,
         total_volume_usdc,
