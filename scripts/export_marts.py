@@ -1,22 +1,26 @@
 import duckdb
 import os
 
-os.makedirs('/Users/indi/workspace/polymarket_analytics/exports', exist_ok=True)
+DUCKDB_PATH = '../polymarket_analytics/dev.duckdb'
+EXPORTS_DIR = '../polymarket_analytics/exports'
 
-con = duckdb.connect('/Users/indi/workspace/polymarket_analytics/dev.duckdb', read_only=True)
+os.makedirs(EXPORTS_DIR, exist_ok=True)
 
-tables = [
-    'mart_category_concentration',
-    'mart_market_creation',
-    'mart_market_duration',
-    'mart_market_summary',
-    'mart_power_law_volume',
-    'mart_top_markets_all_time',
-    'mart_top_markets_by_category'
-]
+con = duckdb.connect(DUCKDB_PATH, read_only=True)
 
-for table in tables:
-    con.execute(f"COPY {table} TO '/Users/indi/workspace/polymarket_analytics/exports/{table}.csv' (HEADER, DELIMITER ',')")
+# Get all tables that start with 'mart_'
+tables = con.execute("""
+    select table_name 
+    from information_schema.tables 
+    where table_schema = 'main'
+    and table_name like 'mart_%'
+    order by table_name
+""").fetchall()
+
+for (table,) in tables:
+    out_path = os.path.join(EXPORTS_DIR, f'{table}.csv')
+    con.execute(f"COPY {table} TO '{out_path}' (HEADER, DELIMITER ',')")
     print(f"Exported {table}")
 
 con.close()
+print(f"\nDone. {len(tables)} marts exported to {EXPORTS_DIR}")
