@@ -265,6 +265,7 @@ See [SETUP.md](SETUP.md) for full setup and reproduction instructions.
 ---
 
 ## Project Structure
+```
 polymarket-analytics/
 ├── data/
 │   └── raw/                        # Raw CSVs extracted from Dune (gitignored)
@@ -310,3 +311,4 @@ polymarket-analytics/
 ├── .gitignore
 ├── README.md
 └── SETUP.md
+```
