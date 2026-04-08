@@ -1,11 +1,11 @@
 -- models/marts/mart_market_creation_trends.sql
 with categorized as (
     select * from {{ ref('int_markets_categorized') }}
-    where market_start_time is not null
+    where coalesce(market_start_time, market_end_time) is not null
 )
 
 select
-    cast(date_trunc('month', market_start_time) as date)  as month,
+    cast(date_trunc('month', coalesce(market_start_time, market_end_time)) as date) as month,
     category,
     count(*) as markets_created,
     sum(total_volume_usdc) as total_volume,
