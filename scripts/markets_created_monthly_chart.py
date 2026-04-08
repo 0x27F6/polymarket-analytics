@@ -56,5 +56,5 @@ ax.annotate('Data source: dune.com', xy=(0.01, 0.01), xycoords='figure fraction'
             fontsize=8, color='gray')
 
 plt.tight_layout()
-plt.savefig('../polymarket_analytics/exports/market_creation_chart.png', dpi=150)
+plt.savefig('../polymarket_analytics/assets/charts/market_creation_chart', dpi=150)
 plt.show()
