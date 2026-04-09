@@ -5,6 +5,8 @@ __pycache__/
 
 # Data files (too large for git)
 data/raw/*.csv
+exports/ 
+
 
 # dbt
 target/
