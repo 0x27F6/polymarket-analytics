@@ -16,5 +16,4 @@ logs/
 # OS
 .DS_Store
 *.duckdb
-*.duckdb
-*.duckdb
+
