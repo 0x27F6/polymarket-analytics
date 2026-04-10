@@ -116,7 +116,7 @@ Mart Tables → CSV Exports → Python (Pandas, Matplotlib) → Charts
 
 ### Data Constraints
 
-This analysis focuses on the 164,676 markets with lifetime volume (LTV) greater than $10,000, 
+This analysis focuses on the 156,283 markets with lifetime volume (LTV) greater than $10,000, 
 which account for 97.3% of Polymarket's $29.5B in cumulative trading volume. Markets below 
 this threshold are excluded to reduce extract size and filter noise.
 
@@ -149,7 +149,7 @@ The top 1% of markets — just 5,757 out of 575,658 — account for over 60% of 
 The bottom 50%, nearly 288,000 markets, collectively trade just $155M, less than many 
 individual top-tier markets.
 
-This is not simply a noise problem. Even after filtering to the 164,676 active markets 
+This is not simply a noise problem. Even after filtering to the 156,283 active markets 
 (LTV > $10,000), concentration persists:
 
 | Bucket | Market Count | Volume ($M) | % of Active Markets | % of Volume |
