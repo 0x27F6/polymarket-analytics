@@ -20,6 +20,29 @@ election cycle. This project has two primary aims:
 - What does the trading lifecycle look like after a user exits a position?
 
 ---
+## Data Extraction & Limitations
+
+This analysis is constrained by the cost of extracting historical trade data via the Dune API. As a result, the dataset is filtered to include only markets with a lifetime trading volume (LTV) of at least $10,000.
+
+### Dataset summary:
+	•	~580,000 markets existed between May 2024 and April 9th, 2026
+	•	Total volume over this period: $29.5B
+	•	Median market volume: ~$2,500
+	•	~156,000 markets exceed the $10,000 LTV threshold
+	•	The remaining ~424,000 markets account for ~3% of total volume
+
+This filtering removes a large number of low-activity markets while preserving the vast majority of economic activity.
+
+⸻
+
+### Interpretation considerations
+
+All concentration, skew, and distribution metrics in this analysis are computed on the filtered market universe. As a result, these measures should be interpreted as describing active liquidity-bearing markets, rather than the full population of all created markets.
+
+This distinction is important because Polymarket exhibits extreme long-tail behavior: the majority of markets contribute negligible volume, while a small subset drives nearly all trading activity. The filtering therefore compresses the extreme tail of the distribution, making the observed curves appear less skewed than the true underlying population.
+
+Where relevant, results should be interpreted as conditional on market participation (i.e., markets with meaningful trading activity), rather than unconditional across all market creation events.
+____
 
 ## Methodology
 
@@ -93,7 +116,7 @@ Mart Tables → CSV Exports → Python (Pandas, Matplotlib) → Charts
 
 ### Data Constraints
 
-This analysis focuses on the 164,676 markets with lifetime volume (LTV) greater than $10,000, 
+This analysis focuses on the 156,283 markets with lifetime volume (LTV) greater than $10,000, 
 which account for 97.3% of Polymarket's $29.5B in cumulative trading volume. Markets below 
 this threshold are excluded to reduce extract size and filter noise.
 
@@ -126,7 +149,7 @@ The top 1% of markets — just 5,757 out of 575,658 — account for over 60% of 
 The bottom 50%, nearly 288,000 markets, collectively trade just $155M, less than many 
 individual top-tier markets.
 
-This is not simply a noise problem. Even after filtering to the 164,676 active markets 
+This is not simply a noise problem. Even after filtering to the 156,283 active markets 
 (LTV > $10,000), concentration persists:
 
 | Bucket | Market Count | Volume ($M) | % of Active Markets | % of Volume |
