@@ -1,0 +1,46 @@
+models:
+  - name: stg_market_trades
+    columns:
+      - name: unique_key
+        data_tests:
+          - not_null
+      - name: condition_id
+        data_tests:
+          - unique
+          - not_null 
+      - name: total_volume_usdc
+        data_tests:
+          - not_null 
+      - name: total_trades 
+        data_tests:
+          - not_null 
+      - name: unique_traders
+        data_tests:
+          - not_null
+
+  - name: stg_market_metadata 
+    columns:
+      - name: unique_key
+        data_tests:
+          - not_null
+      - name: condition_id
+        data_tests:
+          - unique
+          - not_null
+      - name: question
+        data_tests:
+          - not_null
+      - name: neg_risk
+        data_tests: 
+          - not_null
+      - name: market_start_time # Fixed 'tart' to 'start'
+        data_tests:
+          - not_null
+      - name: market_end_time
+        data_tests:
+          - not_null
+      - name: outcome
+        data_tests:
+          - not_null
+
+      
