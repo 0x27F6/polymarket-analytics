@@ -49,4 +49,4 @@ market_outcome_stats as (
     group by st.unique_key, st.condition_id
 )
 
-select * from market_outcome_stats;
+select * from market_outcome_stats
