@@ -15,6 +15,7 @@ with
 scoped_trades as (
     select 
         cast(unique_key as varchar) as unique_key,
+        tx_hash,
         amount
     from polymarket_polygon.market_trades
     where taker in (
