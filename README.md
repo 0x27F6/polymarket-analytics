@@ -28,8 +28,8 @@ This analysis is constrained by the cost of extracting historical trade data via
 	•	~580,000 markets existed between May 2024 and April 9th, 2026
 	•	Total volume over this period: $29.5B
 	•	Median market volume: ~$2,500
-	•	~160,000 markets exceed the $10,000 LTV threshold
-	•	The remaining ~420,000 markets account for ~3% of total volume
+	•	~156,000 markets exceed the $10,000 LTV threshold
+	•	The remaining ~424,000 markets account for ~3% of total volume
 
 This filtering removes a large number of low-activity markets while preserving the vast majority of economic activity.
 
