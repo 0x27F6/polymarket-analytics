@@ -2,7 +2,7 @@
 
 /*
 Test: Metadata Join Completeness
-Dependencies: dune_sql/metadata  OR https://dune.com/queries/6932485 
+Dependencies: dune.com/queries 
 
 Expectation:
 All qualified markets (>= $10k scoped volume) must have corresponding metadata.
