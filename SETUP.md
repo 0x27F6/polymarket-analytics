@@ -45,6 +45,40 @@ This will extract two datasets:
 > **Note:** The Dune queries use cached results and do not trigger new executions.
 > Results reflect the state of the data at the time of the last query run.
 
+### Test the dbpt Pipeline
+Ensure packages.yml is downloaded in the root of polymarket and contains:
+```bash
+
+packages:
+  - package: dbt-labs/dbt_utils
+    version: 1.1.1
+```
+
+install dependencies:  
+
+```bash
+
+dbt deps 
+```
+
+run: 
+
+```bash
+
+dbt test
+
+```
+> ### Notes on Data Quality
+>The stg_market_metadata model contains:
+>	•	3,506 null values in market_end_time
+>	•	2,369 null values in market_start_time
+
+>These nulls are expected due to incomplete or unresolved market metadata in the
+> upstream dataset.
+
+>They are handled downstream via COALESCE where required for analysis and are not
+> considered data quality violations in this pipeline. 
+
 ### Run the dbt Pipeline
 ```bash
 cd polymarket_dbt
@@ -69,6 +103,7 @@ python scripts/power_law_chart.py
 python scripts/market_creation_chart.py
 python scripts/volume_by_category_chart.py
 python scripts/volume_skew_chart.py
+python scripts/lorenz_curve.py
 ```
 
 Charts are saved to `assets/charts/`.
