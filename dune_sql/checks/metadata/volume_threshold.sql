@@ -2,7 +2,7 @@
 
 /*
 Test: Volume Threshold Enforcement
-Dependency: Dune.com/queries 
+Dependency: https://dune.com/queries/6932485
 
 Expectation:
 All markets in the final dataset must meet >= $10k volume
