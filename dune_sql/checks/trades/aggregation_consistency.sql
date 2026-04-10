@@ -65,7 +65,8 @@ agg as (
 select 
     b.unique_key,
     b.base_volume,
-    a.agg_volume
+    a.agg_volume,
+    abs(b.base_volume - a.agg_volume) as diff
 from base b
 join agg a
     on b.unique_key = a.unique_key
