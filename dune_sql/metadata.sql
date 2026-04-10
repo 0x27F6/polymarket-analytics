@@ -9,10 +9,8 @@ Approach:
 - Join to market_details to extract metadata
 - Deduplicate to one row per (unique_key, condition_id)
 
-Notes:
-- Volume threshold reflects activity through selected taker addresses,
-  not total market-wide volume
-- This ensures consistency with the upstream aggregation query
+Note: taker filter removes duplication of transactions 
+
 */
 
 with 
