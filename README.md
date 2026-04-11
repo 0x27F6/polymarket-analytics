@@ -2,8 +2,15 @@
 
 ## Overview
 
-Polymarket's growth has been explosive since it came into the public eye during the 2024 
-election cycle. This project has two primary aims:
+Polymarket's $29.5B in lifetime trading volume follows a sharp power law: the top 1,000 markets account for $13.25B (45%), while the long tail of markets sees negligible activity. This project builds a dbt pipeline on data extracted from Dune Analytics to quantify that concentration, segment market behavior, and surface the structural patterns underneath Polymarket's liquidity distribution.
+
+### Key findings so far:
+- Volume concentration is extreme.
+- A small fraction of markets capture the majority of platform activity.
+- Market creation is cheap and permissionless, but speculator attention is scarce — liquidity - clusters around high-profile, genuinely uncertain events
+- Price movement in active markets is tightly coupled to incoming information, suggesting efficient discovery in liquid markets and stale pricing elsewhere
+
+This exploratory analysis has two aims:
 
 1. Analyze Polymarket at the market and category level
 2. Establish a foundation for future analysis of user-level behavior
@@ -126,8 +133,6 @@ this threshold are excluded to reduce extract size and filter noise.
 > open months before the events they track.
 
 ---
-
-## Key Findings
 
 ### Volume Concentration
 
