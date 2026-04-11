@@ -254,7 +254,9 @@ polymarket-analytics/
 │       ├── market_creation_chart.png
 │       ├── volume_by_category_chart.png
 │       ├── volume_skew_chart.png
-│       └── power_law_chart.png
+│       ├── power_law_chart.png
+│		├── lorenz_curve.png
+│       └── category_dumbell.png
 ├── dev.duckdb                      # Local DuckDB database (gitignored)
 ├── .gitignore
 ├── README.md
