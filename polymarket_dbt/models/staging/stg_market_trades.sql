@@ -1,3 +1,5 @@
+-- pull aggregated trade data from CSV
+-- source: dune_sql/polymarket_trades.sql
 with 
 
 source as (
