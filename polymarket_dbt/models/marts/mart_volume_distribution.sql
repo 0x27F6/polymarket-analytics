@@ -1,3 +1,33 @@
+/*
+Purpose: Volume distribution across percentile buckets for the active market universe
+(markets with LTV > $10,000).
+
+Answers: "How much of total volume do the top X% of markets capture?"
+Provides the data behind the volume concentration tables in the README.
+
+Approach:
+    - ranked: assigns each market a percent_rank() based on volume descending.
+      percent_rank() returns 0 for the highest volume market and approaches 1
+      for the lowest — so 'top 1%' corresponds to pct_rank <= 0.01.
+    - buckets: defines the percentile thresholds as a static values table.
+      'lte' buckets are cumulative from the top down (top 1%, top 5% etc).
+      'bottom 50%' uses 'gt' direction to capture the lower half.
+    - bucket_stats: cross joins ranked markets against bucket definitions and
+      filters by direction to compute market count and volume per bucket.
+    - final select: joins back to total for percentage calculations.
+
+Note: percent_rank() is computed on the filtered universe (LTV > $10,000),
+not the full platform population. The full platform distribution is computed
+separately via Dune and referenced in the README.
+
+Grain: one row per percentile bucket (5 rows total)
+*/
+
+
+
+
+
+
 with
 
 markets as (
