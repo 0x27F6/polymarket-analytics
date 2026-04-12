@@ -1,4 +1,4 @@
-/*
+
 /*
 
 Purpose: Monthly market creation and volume trends by category.
@@ -19,7 +19,7 @@ trading month. This is a known limitation of the current pipeline.
 Grain: one row per month per category
 */
 
-*/
+
 
 with categorized as (
     select * from {{ ref('int_markets_categorized') }}
