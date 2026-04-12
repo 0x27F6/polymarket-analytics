@@ -1,3 +1,12 @@
+/*
+Purpose: A look at the volume, relative size, market counts at the category level.
+
+Approach:
+- group by category to determine volume and market counts
+- partitionless window function to compute total_markets and platform volume
+
+*/
+
 with
 
 markets as (
@@ -26,6 +35,9 @@ totals as (
 select
     category,
     market_count,
+    total_volume,
+    total_markets,
+    platform_volume_total,
     round(total_volume / 1e6, 2) as total_volume_millions,
     round(market_count * 100.0 / total_markets, 2) as pct_of_markets,
     round(total_volume * 100.0 / platform_total_volume, 2) as pct_of_volume
