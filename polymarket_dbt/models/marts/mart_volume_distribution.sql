@@ -22,12 +22,6 @@ separately via Dune and referenced in the README.
 
 Grain: one row per percentile bucket (5 rows total)
 */
-
-
-
-
-
-
 with
 
 markets as (
