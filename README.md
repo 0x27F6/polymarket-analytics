@@ -221,6 +221,7 @@ polymarket-analytics/
 │   │       ├── mart_market_creation.sql
 │   │       ├── mart_market_summary.sql
 │   │       ├── mart_power_law_volume.sql
+│   │       ├── mart_market_duration.sql
 │   │       ├── mart_top_markets_all_time.sql
 │   │       └── mart_volume_distribution.sql
 │   └── dbt_project.yml
