@@ -178,18 +178,6 @@ Crypto volume was negligible through most of 2024 and began growing alongside th
 
 The concentration pattern holds at the platform level, but it is not uniform across categories. The mean/median volume ratio measures how skewed trading activity is within each category — a ratio of 1.0 would indicate perfectly even distribution.
 
-| Category | Mean/Median Ratio |
-|----------|------------------|
-| Politics | 16.1x |
-| Business | 7.1x |
-| Entertainment | 7.0x |
-| Other | 6.0x |
-| Sports | 5.0x |
-| Tech & Science | 3.9x |
-| Finance | 3.5x |
-| Crypto | 2.0x |
-| Weather | 1.4x |
-
 Politics at 16.1x is the most extreme — more than double the next category. This is the mathematical signature of the election effect: a small number of massive markets pull the category mean far above the median. Politics markets are not uniformly large — they are bimodal, with a long tail of small markets and a handful of giants.
 
 Crypto at 2.0x is the most evenly distributed category, reflecting the commoditized nature of recurring short-duration price markets. Weather at 1.4x is the flattest — daily temperature markets are uniform by design.
