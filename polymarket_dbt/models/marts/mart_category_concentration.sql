@@ -15,18 +15,20 @@ Example interpretation:
 Grain: one row per category
 */
 
+-- rank markets by volume per category 
 with categorized as (
     select *,
         row_number() over (partition by category order by total_volume_usdc desc) as category_rank
     from {{ ref('int_markets_categorized') }}
 ),
 
+-- sum total category volume(used for percetages
 category_totals as (
     select category, sum(total_volume_usdc) as category_volume
     from categorized
     group by category
 )
-
+-- rolling sum up to a category rank contrasted with total category volume
 select
     c.category,
     -- raw volumes
