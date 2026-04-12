@@ -1,4 +1,20 @@
--- models/marts/mart_category_power_law.sql
+
+/*
+Purpose: Measure volume concentration within each category.
+
+For each category, computes how much of the total category volume is captured
+by the top 10, top 50, and top 100 markets ranked by volume.
+
+This quantifies the "within-category power law" — complementing the mean/median
+skew chart by showing exactly how few markets dominate each category.
+
+Example interpretation:
+    If Politics top_10_pct = 80%, it means 10 markets account for 80% of all
+    Politics volume, confirming the bimodal distribution observed in the skew analysis.
+
+Grain: one row per category
+*/
+
 with categorized as (
     select *,
         row_number() over (partition by category order by total_volume_usdc desc) as category_rank
