@@ -217,16 +217,12 @@ polymarket-analytics/
 │   │   └── marts/
 │   │       ├── fct_markets.sql
 │   │       ├── mart_category_concentration.sql
-│   │       ├── mart_category_power_law.sql
 │   │       ├── mart_category_volume_summary.sql
 │   │       ├── mart_market_creation.sql
-│   │       ├── mart_market_duration.sql
 │   │       ├── mart_market_summary.sql
 │   │       ├── mart_power_law_volume.sql
 │   │       ├── mart_top_markets_all_time.sql
-│   │       ├── mart_top_markets_by_category.sql
-│   │       ├── mart_volume_distribution.sql
-│   │       └── top_200_markets.sql
+│   │       └── mart_volume_distribution.sql
 │   └── dbt_project.yml
 ├── exports/                        # Mart CSVs for visualization (gitignored)
 ├── scripts/
