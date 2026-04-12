@@ -1,3 +1,25 @@
+/*
+Purpose: Platform-level volume concentration across all markets regardless of category.
+Answers: "How much of total platform volume do the top N markets capture?"
+
+Computes cumulative volume and % share for top 10, 50, 100, and 500 markets
+by lifetime trading volume.
+
+Distinction from mart_category_concentration:
+    - mart_category_concentration measures within-category concentration
+      (top N markets as a % of their category's volume)
+    - This mart measures platform-wide concentration
+      (top N markets as a % of all platform volume)
+
+Approach:
+    - top_markets_by_volume: ranks all markets by volume descending
+    - total_market_volume: scalar subquery for total platform volume,
+      used as denominator for % calculations
+    - cross join to bring the scalar into the final select without a group by key
+
+Grain: single row (platform-wide summary)
+*/
+
 with 
 
 top_markets_by_volume as(
