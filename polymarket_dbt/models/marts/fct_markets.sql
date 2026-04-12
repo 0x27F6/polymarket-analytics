@@ -1,3 +1,14 @@
+/*
+Purpose: Join staged metadata and trade data to create a source of truth
+
+Approach: 
+- inner join on condition_id and unique key 
+- collapse to the market level (required for negRisk markets: multiple condition_ids mapped to one unique_key)
+- aggregate by SUM for integers or MAX for strings(pulls non-integer data lexicographically)
+
+
+*/
+
 with 
 
 trades as (
@@ -30,7 +41,6 @@ joined as (
 ),
 
 -- Collapse to market level
--- for shared values across outcomes max is the chosen aggregate.
 market_level as (
     select
         unique_key,
