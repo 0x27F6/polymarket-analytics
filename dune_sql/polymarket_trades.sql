@@ -1,7 +1,14 @@
--- Analyze trading activity for selected taker addresses,
--- focusing only on markets with meaningful liquidity (>= $10k volume)
--- Dune Query: https://dune.com/queries/6932269
+/*
+Purpose: Aggregate trades to the market grain.
+https://dune.com/queries/6932269
 
+Approach:
+- Query categories required for aggregation
+- Deduplicate using taker-sided address filter (Neg-Risk and CTF contract addresses)
+- Compute volume traded at the market grain
+- Aggregate scoped trades and filter out markets with less than 10,000 lifetime volume
+
+*/
 with 
 
 -- 1) Define the scoped dataset -- taker sided deduplication
