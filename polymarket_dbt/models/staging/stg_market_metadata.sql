@@ -1,5 +1,7 @@
+-- pull market metadata from raw CSV
+-- source data: dune_sql/metadata.sql
 with
-
+    
 source as (
     select *
     from raw_market_metadata
