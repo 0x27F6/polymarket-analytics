@@ -1,5 +1,6 @@
 -- Analyze trading activity for selected taker addresses,
 -- focusing only on markets with meaningful liquidity (>= $10k volume)
+-- Dune Query: https://dune.com/queries/6932269
 
 with 
 
